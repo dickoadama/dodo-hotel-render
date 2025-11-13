@@ -5,8 +5,13 @@ set -o errexit
 # Install PHP dependencies
 composer install --no-dev --optimize-autoloader
 
+# Copy environment file
+if [ ! -f .env ]; then
+  cp .env.render .env
+fi
+
 # Generate application key
-php artisan key:generate
+php artisan key:generate --ansi
 
 # Run database migrations
 php artisan migrate --force
