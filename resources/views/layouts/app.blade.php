@@ -12,6 +12,7 @@
             min-height: 100vh;
             position: relative;
             background-attachment: fixed;
+            overflow-x: hidden;
         }
         
         body::before {
@@ -53,6 +54,11 @@
             background-color: rgba(255, 255, 255, 0.9);
             border: none;
             box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            border-radius: 15px;
+        }
+        
+        .rounded-15 {
+            border-radius: 15px !important;
         }
         
         .footer {
