@@ -3,7 +3,7 @@
 set -o errexit
 
 # Install PHP dependencies
-composer install --no-dev --optimize-autoloader
+composer install --no-dev --optimize-autoloader --no-interaction
 
 # Copy environment file
 if [ ! -f .env ]; then
@@ -14,7 +14,7 @@ fi
 php artisan key:generate --ansi
 
 # Run database migrations
-php artisan migrate --force
+php artisan migrate --force --no-interaction
 
 # Clear caches
 php artisan config:cache
